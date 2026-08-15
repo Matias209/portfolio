@@ -228,49 +228,36 @@ function initializePortfolio() {
 }
 
 document.addEventListener("DOMContentLoaded", initializePortfolio);
-
 const languageToggle = document.getElementById("language-toggle");
 
 let currentLanguage = "es";
 
 const translations = {
     es: {
-        "Sobre mí": "Sobre mí",
-        "Experiencia": "Experiencia",
-        "Proyectos": "Proyectos",
-        "Azure Lab": "Azure Lab",
-        "Contacto": "Contacto",
-        "Descargar CV": "Descargar CV",
-        "LinkedIn": "LinkedIn",
-        "GitHub": "GitHub",
-        "Certificaciones": "Certificaciones",
-        "Selected Technology Achievements": "Selected Technology Achievements"
+        about: "Sobre mí",
+        experience: "Experiencia",
+        projects: "Proyectos",
+        azureLab: "Azure Lab",
+        contact: "Contacto"
     },
 
     en: {
-        "Sobre mí": "About Me",
-        "Experiencia": "Experience",
-        "Proyectos": "Projects",
-        "Azure Lab": "Azure Lab",
-        "Contacto": "Contact",
-        "Descargar CV": "Download CV",
-        "LinkedIn": "LinkedIn",
-        "GitHub": "GitHub",
-        "Certificaciones": "Certifications",
-        "Selected Technology Achievements": "Selected Technology Achievements"
+        about: "About Me",
+        experience: "Experience",
+        projects: "Projects",
+        azureLab: "Azure Lab",
+        contact: "Contact"
     }
 };
 
 function translatePage() {
-    const elements = document.querySelectorAll(
-        "a, h1, h2, h3, p, span, li, button"
-    );
+    const elements = document.querySelectorAll("[data-i18n]");
 
     elements.forEach((element) => {
-        const text = element.textContent.trim();
+        const key = element.getAttribute("data-i18n");
 
-        if (translations[currentLanguage][text]) {
-            element.textContent = translations[currentLanguage][text];
+        if (translations[currentLanguage][key]) {
+            element.textContent = translations[currentLanguage][key];
         }
     });
 
