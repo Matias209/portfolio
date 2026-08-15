@@ -228,3 +228,57 @@ function initializePortfolio() {
 }
 
 document.addEventListener("DOMContentLoaded", initializePortfolio);
+
+const languageToggle = document.getElementById("language-toggle");
+
+let currentLanguage = "es";
+
+const translations = {
+    es: {
+        "Sobre mí": "Sobre mí",
+        "Experiencia": "Experiencia",
+        "Proyectos": "Proyectos",
+        "Azure Lab": "Azure Lab",
+        "Contacto": "Contacto",
+        "Descargar CV": "Descargar CV",
+        "LinkedIn": "LinkedIn",
+        "GitHub": "GitHub",
+        "Certificaciones": "Certificaciones",
+        "Selected Technology Achievements": "Selected Technology Achievements"
+    },
+
+    en: {
+        "Sobre mí": "About Me",
+        "Experiencia": "Experience",
+        "Proyectos": "Projects",
+        "Azure Lab": "Azure Lab",
+        "Contacto": "Contact",
+        "Descargar CV": "Download CV",
+        "LinkedIn": "LinkedIn",
+        "GitHub": "GitHub",
+        "Certificaciones": "Certifications",
+        "Selected Technology Achievements": "Selected Technology Achievements"
+    }
+};
+
+function translatePage() {
+    const elements = document.querySelectorAll(
+        "a, h1, h2, h3, p, span, li, button"
+    );
+
+    elements.forEach((element) => {
+        const text = element.textContent.trim();
+
+        if (translations[currentLanguage][text]) {
+            element.textContent = translations[currentLanguage][text];
+        }
+    });
+
+    languageToggle.textContent = currentLanguage === "es" ? "EN" : "ES";
+}
+
+languageToggle.addEventListener("click", () => {
+    currentLanguage = currentLanguage === "es" ? "en" : "es";
+
+    translatePage();
+});
