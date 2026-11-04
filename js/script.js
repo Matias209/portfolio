@@ -1,230 +1,138 @@
-const projects = [
-    {
-        title: "Performance Dashboard",
-        description:
-            "Dashboard interno para centralizar indicadores operativos, productividad y seguimiento de KPIs.",
-        technologies: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-        url: "#"
-    },
-    {
-        title: "Speech AI",
-        description:
-            "Solución asistida por inteligencia artificial para analizar conversaciones de WhatsApp y reducir la revisión manual.",
-        technologies: ["Generative AI", "ChatGPT", "Prompt Engineering"],
-        url: "#"
-    },
-    {
-        title: "Lead Management Platform",
-        description:
-            "Plataforma interna para mejorar la trazabilidad, seguimiento y visibilidad de leads comerciales.",
-        technologies: ["JavaScript", "REST APIs", "GitHub"],
-        url: "#"
-    },
-    {
-        title: "GitHub Internal Portal",
-        description:
-            "Portal interno para centralizar documentación, enlaces, herramientas y recursos operativos.",
-        technologies: ["GitHub Pages", "HTML", "CSS", "JavaScript"],
-        url: "#"
-    }
-];
+// Tres interacciones: el menú en el celular, el cambio de idioma y la profundidad del inicio.
+// Todo lo demás (las órbitas, los links) funciona solo con HTML y CSS.
 
-const azureLabs = [
-    {
-        title: "Azure Virtual Machines",
-        description:
-            "Creación y administración de máquinas virtuales Windows y Linux en Microsoft Azure.",
-        status: "Próximamente",
-        url: "labs/azure-vm/"
-    },
-    {
-        title: "Microsoft Entra ID",
-        description:
-            "Gestión de identidades, usuarios, grupos y acceso basado en roles.",
-        status: "Próximamente",
-        url: "labs/entra-id/"
-    },
-    {
-        title: "Azure Networking",
-        description:
-            "Configuración de redes virtuales, subredes, NSG y conectividad.",
-        status: "Próximamente",
-        url: "labs/networking/"
-    },
-    {
-        title: "Azure Storage",
-        description:
-            "Administración de cuentas de almacenamiento, containers y blobs.",
-        status: "Próximamente",
-        url: "labs/storage/"
-    },
-    {
-        title: "RBAC",
-        description:
-            "Asignación y validación de permisos mediante Role-Based Access Control.",
-        status: "Próximamente",
-        url: "labs/rbac/"
-    },
-    {
-        title: "Azure Monitor",
-        description:
-            "Supervisión de recursos, métricas, alertas y registros operativos.",
-        status: "Próximamente",
-        url: "labs/monitor/"
-    }
-];
+const botonMenu = document.getElementById("boton-menu");
+const menu = document.getElementById("menu");
 
-function createTechnologyList(technologies) {
-    return technologies
-        .map((technology) => `<span>${technology}</span>`)
-        .join("");
+// Abre o cierra el menú y avisa a los lectores de pantalla si está abierto.
+function alternarMenu() {
+    const estaAbierto = menu.classList.toggle("abierto");
+    botonMenu.setAttribute("aria-expanded", String(estaAbierto));
 }
 
-function renderProjects() {
-    const projectGrid = document.querySelector("#project-grid");
-
-    if (!projectGrid) {
-        return;
-    }
-
-    projectGrid.innerHTML = projects
-        .map(
-            (project) => `
-                <article class="project-card reveal">
-                    <h3>${project.title}</h3>
-
-                    <p>${project.description}</p>
-
-                    <div class="technology-list">
-                        ${createTechnologyList(project.technologies)}
-                    </div>
-
-                    <a class="card-link" href="${project.url}">
-                        Ver proyecto →
-                    </a>
-                </article>
-            `
-        )
-        .join("");
+// Cierra el menú. Se usa al elegir una sección o al apretar Escape.
+function cerrarMenu() {
+    menu.classList.remove("abierto");
+    botonMenu.setAttribute("aria-expanded", "false");
 }
 
-function renderAzureLabs() {
-    const labGrid = document.querySelector("#lab-grid");
+botonMenu.addEventListener("click", alternarMenu);
 
-    if (!labGrid) {
-        return;
+// Al tocar un link del menú, lo cerramos para que no tape la sección.
+menu.addEventListener("click", (evento) => {
+    if (evento.target.closest("a")) {
+        cerrarMenu();
     }
+});
 
-    labGrid.innerHTML = azureLabs
-        .map(
-            (lab) => `
-                <article class="lab-card reveal">
-                    <span class="lab-status">${lab.status}</span>
-
-                    <h3>${lab.title}</h3>
-
-                    <p>${lab.description}</p>
-
-                    <a class="card-link" href="${lab.url}">
-                        Ver laboratorio →
-                    </a>
-                </article>
-            `
-        )
-        .join("");
-}
-
-function configureTheme() {
-    const themeButton = document.querySelector("#theme-toggle");
-
-    if (!themeButton) {
-        return;
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape") {
+        cerrarMenu();
     }
+});
 
-    const savedTheme = localStorage.getItem("portfolio-theme");
+// ---------- Cambio de idioma (español / inglés) ----------
+// El HTML está escrito en español. Cada elemento traducible lleva su texto en inglés
+// en un atributo: data-en="..." (para el contenido) o data-en-alt / data-en-aria-label.
+// Al cambiar de idioma guardamos el original en español la primera vez y lo restauramos al volver.
 
-    if (savedTheme === "light") {
-        document.body.classList.add("light-theme");
-    }
+const botonIdioma = document.getElementById("boton-idioma");
 
-    themeButton.addEventListener("click", () => {
-        document.body.classList.toggle("light-theme");
+// Los textos del <head> no están en la página, así que se traducen desde acá.
+const textosCabecera = {
+    es: {
+        titulo: document.title,
+        descripcion: document.querySelector('meta[name="description"]').content,
+    },
+    en: {
+        titulo: "Matías Samuel Díaz | Technology, automation and CX",
+        descripcion:
+            "Portfolio of Matías Samuel Díaz: technology, team leadership, automation and customer experience. Includes OrbitCX, a suite of four tools for contact centers.",
+    },
+};
 
-        const currentTheme = document.body.classList.contains("light-theme")
-            ? "light"
-            : "dark";
+function aplicarIdioma(idioma) {
+    const esIngles = idioma === "en";
+    document.documentElement.lang = idioma;
 
-        localStorage.setItem("portfolio-theme", currentTheme);
-    });
-}
-
-function configureMobileMenu() {
-    const menuButton = document.querySelector("#menu-toggle");
-    const navigation = document.querySelector("#nav-links");
-    const navigationLinks = document.querySelectorAll("#nav-links a");
-
-    if (!menuButton || !navigation) {
-        return;
-    }
-
-    menuButton.addEventListener("click", () => {
-        const isOpen = navigation.classList.toggle("open");
-
-        menuButton.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    navigationLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            navigation.classList.remove("open");
-            menuButton.setAttribute("aria-expanded", "false");
-        });
-    });
-}
-
-function configureScrollEffects() {
-    const header = document.querySelector(".site-header");
-
-    window.addEventListener("scroll", () => {
-        header?.classList.toggle("scrolled", window.scrollY > 10);
-    });
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.12
+    // Contenido: guardamos el español la primera vez y alternamos
+    document.querySelectorAll("[data-en]").forEach((elemento) => {
+        if (elemento.dataset.es === undefined) {
+            elemento.dataset.es = elemento.innerHTML;
         }
-    );
+        elemento.innerHTML = esIngles ? elemento.dataset.en : elemento.dataset.es;
+    });
 
-    document
-        .querySelectorAll(".section, .timeline-item, .reveal")
-        .forEach((element) => {
-            element.classList.add("reveal");
-            observer.observe(element);
+    // Atributos que leen los lectores de pantalla (alt y aria-label)
+    ["alt", "aria-label"].forEach((atributo) => {
+        document.querySelectorAll(`[data-en-${atributo}]`).forEach((elemento) => {
+            // dataset no admite guiones seguidos de minúscula, por eso usamos nombres en camelCase
+            const guardado = atributo === "alt" ? "esAlt" : "esAriaLabel";
+            if (elemento.dataset[guardado] === undefined) {
+                elemento.dataset[guardado] = elemento.getAttribute(atributo);
+            }
+            elemento.setAttribute(
+                atributo,
+                esIngles ? elemento.getAttribute(`data-en-${atributo}`) : elemento.dataset[guardado]
+            );
         });
-}
+    });
 
-function setCurrentYear() {
-    const currentYearElement = document.querySelector("#current-year");
+    document.title = textosCabecera[idioma].titulo;
+    document.querySelector('meta[name="description"]').content = textosCabecera[idioma].descripcion;
 
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
+    // El botón muestra el idioma al que se puede cambiar (el texto lo cambia el bucle de arriba)
+    botonIdioma.lang = esIngles ? "es" : "en";
+
+    // Recordamos la elección. Puede fallar (por ejemplo, navegación privada): no pasa nada.
+    try {
+        localStorage.setItem("idioma", idioma);
+    } catch (error) {
+        // Sin almacenamiento, la página simplemente vuelve a español al recargar.
     }
 }
 
-function initializePortfolio() {
-    renderProjects();
-    renderAzureLabs();
-    configureTheme();
-    configureMobileMenu();
-    configureScrollEffects();
-    setCurrentYear();
+botonIdioma.addEventListener("click", () => {
+    const idiomaActual = document.documentElement.lang;
+    aplicarIdioma(idiomaActual === "en" ? "es" : "en");
+    cerrarMenu();
+});
+
+// Al cargar, usamos el idioma guardado (si hay uno)
+try {
+    if (localStorage.getItem("idioma") === "en") {
+        aplicarIdioma("en");
+    }
+} catch (error) {
+    // Sin almacenamiento, se queda en español.
 }
 
-document.addEventListener("DOMContentLoaded", initializePortfolio);
+// ---------- Profundidad en el inicio ----------
+// Mide dónde está el mouse dentro de la pantalla y se lo pasa al CSS
+// como dos números entre -1 y 1. El CSS decide cuánto mueve cada capa.
+// En celular no hay mouse, así que ahí queda solo la animación lenta.
+
+const escena = document.getElementById("escena");
+const quiereMenosMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+let cuadroPendiente = false;
+
+function moverCapas(evento) {
+    // Usamos requestAnimationFrame para actualizar una sola vez por cuadro
+    if (cuadroPendiente) {
+        return;
+    }
+    cuadroPendiente = true;
+
+    requestAnimationFrame(() => {
+        const x = (evento.clientX / window.innerWidth) * 2 - 1;
+        const y = (evento.clientY / window.innerHeight) * 2 - 1;
+        escena.style.setProperty("--mx", x.toFixed(3));
+        escena.style.setProperty("--my", y.toFixed(3));
+        cuadroPendiente = false;
+    });
+}
+
+if (escena && !quiereMenosMovimiento.matches) {
+    window.addEventListener("mousemove", moverCapas);
+}

@@ -7,608 +7,380 @@
 
     <meta
         name="description"
-        content="Portfolio profesional de Matías Díaz, enfocado en IT Operations, gestión de proyectos, automatización, integraciones, CRM y Microsoft Azure."
+        content="Portfolio de Matías Samuel Díaz: tecnología, liderazgo de equipos, automatización y experiencia de cliente. Incluye OrbitCX, una suite de cuatro herramientas para contact center."
     >
 
-    <title>Matías Díaz | Project Lead | IT Operations</title>
+    <title>Matías Samuel Díaz | Tecnología, automatización y CX</title>
+
+    <!-- Dos fuentes de Google Fonts. Si no cargan, el navegador usa una fuente del sistema. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    >
 
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
 
-    <header class="site-header">
-        <nav class="navbar container" aria-label="Navegación principal">
+    <a class="saltar" href="#contenido" data-en="Skip to content">Saltar al contenido</a>
 
-            <a class="logo" href="#inicio">MD</a>
+    <header class="cabecera">
+        <nav class="barra contenedor" aria-label="Navegación principal" data-en-aria-label="Main navigation">
+
+            <a class="marca" href="#inicio">Matías Samuel Díaz</a>
 
             <button
-                class="menu-toggle"
-                id="menu-toggle"
+                class="boton-menu"
+                id="boton-menu"
                 type="button"
-                aria-label="Abrir menú"
                 aria-expanded="false"
-            >
-                ☰
+                aria-controls="menu"
+             data-en="Menu">
+                Menú
             </button>
 
-            <ul class="nav-links" id="nav-links">
-             <li><a href="#sobre-mi" data-i18n="about">Sobre mí</a></li>
-              <li><a href="#experiencia" data-i18n="experience">Experiencia</a></li>
-                <li><a href="#proyectos" data-i18n="projects">Proyectos</a></li>
-                <li><a href="#azure-lab" data-i18n="azureLab">Azure Lab</a></li>
-                <li><a href="#certificaciones">Certificaciones</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <ul class="menu" id="menu">
+                <li><a href="#sobre-mi" data-en="About">Sobre mí</a></li>
+                <li><a href="#experiencia" data-en="Experience">Experiencia</a></li>
+                <li><a href="#orbitcx">OrbitCX</a></li>
+                <li><a href="#bitacora" data-en="Logbook">Bitácora</a></li>
+                <li><a href="#otros-proyectos" data-en="Other projects">Otros proyectos</a></li>
+                <li><a href="#contacto" data-en="Contact">Contacto</a></li>
                 <li>
- 
-</li>
+                    <!-- Muestra el idioma al que se puede cambiar: "EN" estando en español y "ES" en inglés -->
+                    <button class="boton-idioma" id="boton-idioma" type="button" lang="en"
+                        aria-label="Switch to English" data-en="ES" data-en-aria-label="Cambiar a español">EN</button>
+                </li>
             </ul>
-
-            <button
-                class="theme-toggle"
-                id="theme-toggle"
-                type="button"
-                aria-label="Cambiar tema"
-            >
-                ◐
-            </button>
 
         </nav>
     </header>
 
+    <main id="contenido">
 
-    <main>
+        <!-- INICIO -->
+        <section class="inicio contenedor" id="inicio">
 
-        <!-- HERO -->
+            <div class="inicio-texto">
+                <h1>Matías Samuel Díaz</h1>
 
-        <section class="hero container" id="inicio">
-
-            <div class="hero-content">
-
-                <p class="eyebrow">
-                     IT Operations · Automation · Technology
+                <p class="lema">
+                    <span data-en="Technology">Tecnología</span> <span class="sep" aria-hidden="true">|</span>
+                    <span data-en="Team leadership">Liderazgo de equipos</span> <span class="sep" aria-hidden="true">|</span>
+                    <span data-en="Automation">Automatización</span> <span class="sep" aria-hidden="true">|</span>
+                    <span>CX</span>
                 </p>
 
-                <h1>Matías Díaz</h1>
-
-                <h2>
-                    Profesional de tecnología enfocado en operaciones,
-                    gestión de proyectos, automatización e integraciones.
-                </h2>
-
-                <p class="hero-description">
-                    Experiencia en liderazgo de equipos, soporte tecnológico,
-                    gestión de proyectos, análisis y mejora de procesos,
-                    CRM, automatización e integración de plataformas.
-                    Actualmente orientando mi desarrollo hacia Microsoft Azure
-                    y Cloud Operations.
+                <p class="inicio-frase" data-en="I automate processes, lead teams and build systems. 8+ years of experience leading contact centers, technology implementations and integrations, and automation.">
+                    Automatizo procesos, lidero equipos y construyo sistemas. Más de 8 años de experiencia
+                    liderando contact centers, implementaciones e integraciones de tecnologías y automatización.
                 </p>
 
-                <div class="hero-actions">
-
+                <div class="botones">
+                    <a class="boton boton-principal" href="#orbitcx" data-en="See OrbitCX">Ver OrbitCX</a>
+                    <a class="boton" href="assets/files/cv-matias-samuel-diaz.pdf" download data-en="Download CV (in Spanish)">Descargar CV</a>
                     <a
-                        class="button button-primary"
-                        href="assets/files/cv-matias-diaz.pdf"
+                        class="boton"
+                        href="https://www.linkedin.com/in/matias-d%C3%ADaz-s%C3%A1nchez-684413106/"
                         target="_blank"
                         rel="noopener noreferrer"
-                    >
-                        Descargar CV
-                    </a>
-
+                    >LinkedIn</a>
                     <a
-                        class="button button-secondary"
-                        href="https://www.linkedin.com/"
+                        class="boton"
+                        href="https://github.com/matias209"
                         target="_blank"
                         rel="noopener noreferrer"
-                    >
-                        LinkedIn
-                    </a>
-
-                    <a
-                        class="button button-secondary"
-                        href="https://github.com/Matias209"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        GitHub
-                    </a>
-                    <a
-                        class="button button-secondary"
-                        href="https://wa.me/59899099674"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        WhatsApp
-                    </a>
-
+                    >GitHub</a>
                 </div>
-
             </div>
 
+            <!-- Escena en dos capas, de atrás hacia adelante:
+                 1) los cuatro planetas de OrbitCX en órbita (cada uno lleva a su módulo),
+                 2) mi foto, recortada, por delante de todo. -->
+            <div class="escena" id="escena">
 
-            <div class="hero-photo">
+                <div class="capa capa-orbitas" role="group" aria-label="Los cuatro módulos de OrbitCX en órbita" data-en-aria-label="The four OrbitCX modules in orbit">
+                    <div class="orbita">
+                        <div class="anillo anillo-1">
+                            <a class="planeta planeta-nebula" href="#nebula" aria-label="Nebula, base de conocimiento" data-en-aria-label="Nebula, knowledge base"></a>
+                        </div>
+                        <div class="anillo anillo-2">
+                            <a class="planeta planeta-comet" href="#comet" aria-label="Comet, helpdesk de tickets" data-en-aria-label="Comet, ticket helpdesk"></a>
+                        </div>
+                        <div class="anillo anillo-3">
+                            <a class="planeta planeta-mission" href="#mission-control" aria-label="Mission Control, panel de supervisión" data-en-aria-label="Mission Control, supervision dashboard"></a>
+                        </div>
+                        <div class="anillo anillo-4">
+                            <a class="planeta planeta-constellation" href="#constellation" aria-label="Constellation, puntaje de agentes" data-en-aria-label="Constellation, agent scoring"></a>
+                        </div>
+                    </div>
+                </div>
 
-                <img
-                    src="assets/images/profile.jpg"
-                    alt="Fotografía profesional de Matías Díaz"
-                >
+                <div class="capa capa-persona">
+                    <img
+                        src="assets/images/matias-recorte.webp"
+                        alt="Retrato de Matías Samuel Díaz, con los brazos cruzados" data-en-alt="Portrait of Matías Samuel Díaz, arms crossed"
+                        width="688"
+                        height="1159"
+                    >
+                </div>
 
             </div>
 
         </section>
 
+        <!-- SOBRE MÍ -->
+        <section class="seccion contenedor" id="sobre-mi">
+            <h2 data-en="About">Sobre mí</h2>
 
-        <!-- SOBRE MI -->
+            <div class="sobre-mi">
+                <p data-en="I automate processes, integrate systems and build AI solutions. Over 8 years I went from leading RPA and operations teams to designing, implementing and putting into production automations for customer experience, aftersales and support processes.">
+                    Automatizo procesos, integro sistemas y desarrollo soluciones con IA. En más de 8 años
+                    pasé de liderar equipos de RPA y operaciones a diseñar, implementar y poner en producción
+                    automatizaciones para procesos de customer experience, posventa y soporte.
+                </p>
 
-        <section class="section container" id="sobre-mi">
-
-            <div class="section-heading">
-
-                <p class="section-number">01</p>
-
-                <h2>Sobre mí</h2>
-
+                <dl class="habilidades">
+                    <div>
+                        <dt data-en="Automation and RPA">Automatización y RPA</dt>
+                        <dd>Python, Selenium, UiPath, Automation Anywhere, Power Automate, n8n, Make, Zapier, Google Apps Script</dd>
+                    </div>
+                    <div>
+                        <dt data-en="Artificial Intelligence">Inteligencia Artificial</dt>
+                        <dd data-en="AI agents, local LLMs (Llama/Ollama), AI-assisted development (Claude Code)">Agentes de IA, LLMs locales (Llama/Ollama), desarrollo asistido por IA (Claude Code)</dd>
+                    </div>
+                    <div>
+                        <dt data-en="Integrations and CRM">Integraciones y CRM</dt>
+                        <dd>APIs REST, webhooks, Salesforce, Zendesk, HubSpot, vtiger, Amazon Connect</dd>
+                    </div>
+                    <div>
+                        <dt data-en="Data and development">Datos y desarrollo</dt>
+                        <dd>SQL, JavaScript, Git</dd>
+                    </div>
+                    <div>
+                        <dt data-en="Infrastructure and cloud">Infraestructura y cloud</dt>
+                        <dd>Linux, Azure (AZ-104)</dd>
+                    </div>
+                </dl>
             </div>
-
-
-            <div class="about-grid">
-
-                <div>
-
-                    <p>
-                        Mi trayectoria comenzó en operaciones y liderazgo de equipos,
-                        evolucionando progresivamente hacia el soporte tecnológico,
-                        la automatización y la arquitectura CRM.
-                    </p>
-                    <p>
-                        A nivel técnico, me especializo en resolver cuellos de botella operativos.
-                        Tengo experiencia demostrable integrando plataformas (Salesforce, Zendesk, HubSpot)
-                        mediante APIs REST y Webhooks, y automatizando procesos recurrentes a través de
-                        RPA, Python y Google Apps Script.
-                    </p>
-                    
-                </div>
-
-
-           <ul class="skill-list">
-
-    <li>IT Operations</li>
-    <li>Project Management</li>
-    <li>Agile / Scrum</li>
-    <li>Process Improvement</li>
-    <li>Technical Support</li>
-    <li>Functional Support</li>
-
-    <li>Microsoft Azure</li>
-    <li>Linux</li>
-    <li>Git</li>
-    <li>GitHub</li>
-
-    <li>Python</li>
-    <li>JavaScript</li>
-    <li>Google Apps Script</li>
-
-    <li>REST APIs</li>
-    <li>Webhooks</li>
-
-    <li>Salesforce</li>
-    <li>Zendesk</li>
-    <li>Vtiger</li>
-    <li>HubSpot</li>
-    <li>Amazon Connect</li>
-
-    <li>RPA</li>
-    <li>Power Automate</li>
-    <li>Automation Anywhere</li>
-    <li>n8n</li>
-    <li>Zapier</li>
-
-    <li>Generative AI</li>
-    <li>ChatGPT</li>
-
-</ul>
-
-            </div>
-
         </section>
-
 
         <!-- EXPERIENCIA -->
+        <section class="seccion contenedor" id="experiencia">
+            <h2 data-en="Experience">Experiencia</h2>
 
-        <section class="section container" id="experiencia">
+            <ol class="linea-tiempo">
 
-            <div class="section-heading">
-
-                <p class="section-number">02</p>
-
-                <h2>Experiencia</h2>
-
-            </div>
-
-
-            <div class="timeline">
-
-
-                <!-- FIANCAR -->
-
-                <article class="timeline-item">
-
-                    <p class="timeline-date">
-                        2025 — Actualidad
-                    </p>
-
-
+                <li>
+                    <p class="periodo" data-en="2025 – Present">2025 – Actualidad</p>
                     <div>
-
-                        <h3>
-                            CRM Admin & IT support
-                        </h3>
-
-                        <p class="company-name">
-                            Nation Traffic
-                        </p>
-
-                        <p>
-                            Coordinación de proyectos tecnológicos y administración
-                            de plataformas CRM, combinando gestión de proyectos,
-                            soporte funcional, análisis de procesos y mejora continua.
-                        </p>
-
-
+                        <h3 data-en="Head of Contact Center and Automation">Jefe de Contact Center y Automatización</h3>
+                        <p class="empresa">Grupo Fiancar</p>
+                        <p class="contexto" data-en="Automotive group: Chevrolet Montevideo, official Fiat representative and importer of Geely, JAC and Lynk &amp; Co.">Grupo automotor: Chevrolet Montevideo, representante oficial de Fiat e importador de Geely, JAC y Lynk &amp; Co.</p>
                         <ul>
-
-                            <li>
-                                Gestión y seguimiento de proyectos mediante Jira,
-                                incluyendo tareas, requerimientos, prioridades
-                                y entregables.
-                            </li>
-
-                            <li>
-                                Trabajo bajo metodologías Agile / Scrum y coordinación
-                                entre equipos técnicos y de negocio.
-                            </li>
-
-                            <li>
-                                Administración, configuración y soporte funcional
-                                de Salesforce, Zendesk y Vtiger.
-                            </li>
-
-                            <li>
-                                Automatización de procesos, integraciones,
-                                documentación y mejora de operaciones CRM.
-                            </li>
-
-                            <li>
-                                Soporte a usuarios y resolución de incidencias
-                                relacionadas con aplicaciones y procesos tecnológicos.
-                            </li>
-
+                            <li data-en="I lead a contact center team of 6 people and manage the CRM (vtiger), and I also design and build the area's automations and AI agents.">Lidero un equipo de 6 personas de contact center y administro el CRM (vtiger), además de diseñar y desarrollar las automatizaciones y agentes de IA del área.</li>
+                            <li data-en="I built a Python and Selenium bot that automates end to end the registration of customers on the Geely portal: it extracts chassis numbers from incoming emails, cross-checks each customer's data across internal systems, runs the bulk upload, validates record by record and replies to the customer with the result. It saves 5 to 8 hours of manual work per week.">Desarrollé un bot en Python y Selenium que automatiza de punta a punta el alta de clientes en el portal de Geely: extrae los números de chasis desde los correos entrantes, cruza los datos de cada cliente entre sistemas internos, hace la carga masiva, valida registro por registro y responde al cliente con el resultado. Ahorra entre 5 y 8 horas semanales de trabajo manual.</li>
+                            <li data-en="I built AI agents that work on top of internal systems: one detects leads left unattended for more than 24 h, reassigns them and sends a notification; another manages the workshop's service schedules, confirms the appointment by email, asks for the reason for the visit and records the answer in the system (X-Taller).">Construí agentes de IA que operan sobre los sistemas internos: uno detecta leads sin gestionar por más de 24 h, los reasigna y notifica; otro gestiona las agendas de service del taller, confirma la cita por mail, consulta el motivo y registra la respuesta en el sistema (X-Taller).</li>
+                            <li data-en="I automated after-sales onboarding: a weekly process handles deliveries, filters by model and sends each customer an email with the vehicle manual and the app activation.">Automaticé el onboarding de posventa: un proceso semanal procesa las entregas, filtra por modelo y envía a cada cliente un mail con el manual del vehículo y la activación de la app.</li>
+                            <li data-en="I integrate systems through REST APIs, webhooks, Google Apps Script and n8n.">Integro sistemas mediante APIs REST, webhooks, Google Apps Script y n8n.</li>
                         </ul>
-
                     </div>
+                </li>
 
-                </article>
-
-
-                <!-- ZENITAL -->
-
-                <article class="timeline-item">
-
-                    <p class="timeline-date">
-                        2022 — 2025
-                    </p>
-
-
+                <li>
+                    <p class="periodo">2022 – 2025</p>
                     <div>
-
-                        <h3>
-                            Solutions Architect
-                        </h3>
-
-                        <p class="company-name">
-                            Zenital
-                        </p>
-
-
-                        <p>
-                            Diseño e implementación de soluciones tecnológicas
-                            orientadas a CRM, experiencia de cliente, integraciones,
-                            automatización e Inteligencia Artificial.
-                        </p>
-
-
+                        <h3>Solutions Architect</h3>
+                        <p class="empresa">Zenital</p>
                         <ul>
-
-                            <li>
-                                Diseño e implementación de soluciones e integraciones
-                                utilizando Salesforce, Zendesk, HubSpot y Amazon Connect.
-                            </li>
-
-                            <li>
-                                Integración de plataformas mediante REST APIs,
-                                Webhooks y herramientas de automatización.
-                            </li>
-
-                            <li>
-                                Desarrollo y automatización utilizando JavaScript
-                                y Python.
-                            </li>
-
-                            <li>
-                                Implementación de automatizaciones mediante n8n
-                                y Zapier para optimizar procesos.
-                            </li>
-
-                            <li>
-                                Desarrollo e implementación de soluciones de
-                                chatbot utilizando Inteligencia Artificial Generativa.
-                            </li>
-
-                            <li>
-                                Relevamiento de requerimientos, soporte técnico y
-                                funcional, documentación y resolución de problemas
-                                durante implementaciones.
-                            </li>
-
+                            <li data-en="I led end-to-end implementations of CX platforms: requirements gathering, architecture design, scope, timelines, team and delivery, for clients in 11 countries (including Mexico, Jamaica and the Cayman Islands).">Lideré implementaciones de plataformas de CX de punta a punta: relevamiento, diseño de arquitectura, scope, plazos, equipo y entrega, para clientes de 11 países (incluidos México, Jamaica e Islas Caimán).</li>
+                            <li data-en="I carried out the migration from Twilio to Amazon Connect, along with CRM integrations on Salesforce, Zendesk and HubSpot.">Ejecuté la migración de Twilio a Amazon Connect, además de integraciones de CRM sobre Salesforce, Zendesk y HubSpot.</li>
+                            <li data-en="Resolution of complex technical incidents and architecture documentation for international clients.">Resolución de incidentes técnicos complejos y documentación de arquitecturas para clientes internacionales.</li>
+                            <li data-en="I supported the expansion of the operation to Brazil and Argentina.">Acompañé la expansión de la operación a Brasil y Argentina.</li>
                         </ul>
-
                     </div>
+                </li>
 
-                </article>
-
-
-                <!-- RICOH -->
-
-                <article class="timeline-item">
-
-                    <p class="timeline-date">
-                        2017 — 2021
-                    </p>
-
-
+                <li>
+                    <p class="periodo">2021 – 2022</p>
                     <div>
-
-                        <h3>
-                            Team Leader Regional Support Center
-                        </h3>
-
-                        <p class="company-name">
-                            Ricoh LATAM
-                        </p>
-
-
-                        <p>
-                            Liderazgo de un equipo regional de 20 personas,
-                            brindando soporte Level 1 y Level 2 a clientes B2B
-                            en 12 países de Latinoamérica.
-                        </p>
-
-
+                        <h3 data-en="RPA Process Analyst / Team Lead">Analista de Procesos RPA / Líder de Equipo</h3>
+                        <p class="empresa">Crowe</p>
                         <ul>
-
-                            <li>
-                                Liderazgo y coordinación de 20 colaboradores:
-                                10 en Uruguay y 10 en México.
-                            </li>
-
-                            <li>
-                                Gestión de operaciones de soporte, seguimiento
-                                de incidentes y escalamiento de problemas.
-                            </li>
-
-                            <li>
-                                Seguimiento de KPIs, análisis de rendimiento
-                                y mejora continua de procesos.
-                            </li>
-
-                            <li>
-                                Implementación de automatizaciones RPA orientadas
-                                a mejorar procesos operativos.
-                            </li>
-
+                            <li data-en="I led a team of 11 RPA developers automating administrative, accounting and data processes for banks, universities and logistics companies.">Lideré un equipo de 11 desarrolladores RPA automatizando procesos administrativos, contables y de datos para bancos, universidades y empresas de logística.</li>
+                            <li data-en="Tools: UiPath, Automation Anywhere and Power Automate.">Herramientas: UiPath, Automation Anywhere y Power Automate.</li>
+                            <li data-en="Requirements gathering, end-to-end process documentation and delivery coordination with stakeholders.">Relevamiento de requerimientos, documentación de procesos end-to-end y coordinación de entregas con stakeholders.</li>
+                            <li data-en="Key clients: Universidad Católica del Uruguay, OCA and Carex (Spain).">Clientes clave: Universidad Católica del Uruguay, OCA y Carex (España).</li>
                         </ul>
-
                     </div>
+                </li>
 
-                </article>
+                <li>
+                    <p class="periodo">2017 – 2021</p>
+                    <div>
+                        <h3>Team Leader, Service Desk</h3>
+                        <p class="empresa">Ricoh LATAM</p>
+                        <ul>
+                            <li data-en="I led a team of 20 people on the help desk, providing level 1 support to customers and internal users.">Lideré un equipo de 20 personas en la mesa de ayuda, dando soporte nivel 1 a clientes y usuarios internos.</li>
+                            <li data-en="I automated repetitive tasks and improved the team's operational workflows.">Automaticé tareas repetitivas y mejoré los workflows operativos del equipo.</li>
+                            <li data-en="KPI management, reporting and continuous improvement initiatives.">Gestión de KPIs, reporting e iniciativas de mejora continua.</li>
+                        </ul>
+                    </div>
+                </li>
 
-            </div>
-
+            </ol>
         </section>
 
+        <!-- ORBITCX: caso de estudio -->
+        <section class="seccion contenedor" id="orbitcx">
+            <h2>OrbitCX</h2>
 
-        <!-- SELECTED TECHNOLOGY PROJECTS -->
-
-        <section class="section container" id="proyectos">
-
-            <div class="section-heading">
-
-                <p class="section-number">03</p>
-
-                <h2>Selected Technology Projects</h2>
-
+            <div class="caso">
+                <div>
+                    <h3 data-en="The problem">El problema</h3>
+                    <p data-en="In a contact center, knowledge, cases, operations and evaluation usually live in separate systems. Each team works with its own version of the truth.">
+                        En un contact center, la información, los casos, la operación y la evaluación
+                        suelen vivir en sistemas separados. Cada equipo trabaja con su propia versión de la verdad.
+                    </p>
+                </div>
+                <div>
+                    <h3 data-en="The solution">La solución</h3>
+                    <p data-en="A suite of four web tools that cover the customer cycle: &lt;strong&gt;know, serve, operate and improve&lt;/strong&gt;. Each one works on its own and they all share the same design system.">
+                        Una suite de cuatro herramientas web que cubren el ciclo del cliente:
+                        <strong>conocer, atender, operar y mejorar</strong>. Cada una funciona sola
+                        y todas comparten el mismo sistema de diseño.
+                    </p>
+                </div>
             </div>
 
+            <ul class="modulos">
 
-            <p class="section-intro">
-                Selected technology projects and practical solutions developed
-                through professional experience and hands-on work.
+                <li class="modulo modulo-nebula" id="nebula">
+                    <span class="modulo-planeta" aria-hidden="true"></span>
+                    <div>
+                        <h3>Nebula</h3>
+                        <p class="modulo-fase" data-en="Know">Conocer</p>
+                        <p data-en="Knowledge base so agents find the answer without leaving the customer interaction.">Base de conocimiento para que el agente encuentre la respuesta sin salir de la atención.</p>
+                        <p class="modulo-links">
+                            <a href="https://matias209.github.io/orbitcx-nebula/" target="_blank" rel="noopener noreferrer" data-en="View demo">Ver demo</a>
+                            <a href="https://github.com/matias209/orbitcx-nebula" target="_blank" rel="noopener noreferrer" data-en="View code">Ver código</a>
+                        </p>
+                    </div>
+                </li>
+
+                <li class="modulo modulo-comet" id="comet">
+                    <span class="modulo-planeta" aria-hidden="true"></span>
+                    <div>
+                        <h3>Comet</h3>
+                        <p class="modulo-fase" data-en="Serve">Atender</p>
+                        <p data-en="Ticket helpdesk with SLA: every case has an owner, a status and a deadline that is tracked.">Helpdesk de tickets con SLA: cada caso tiene dueño, estado y un plazo que se controla.</p>
+                        <p class="modulo-links">
+                            <a href="https://matias209.github.io/orbitcx-comet/" target="_blank" rel="noopener noreferrer" data-en="View demo">Ver demo</a>
+                            <a href="https://github.com/matias209/orbitcx-comet" target="_blank" rel="noopener noreferrer" data-en="View code">Ver código</a>
+                        </p>
+                    </div>
+                </li>
+
+                <li class="modulo modulo-mission" id="mission-control">
+                    <span class="modulo-planeta" aria-hidden="true"></span>
+                    <div>
+                        <h3>Mission Control</h3>
+                        <p class="modulo-fase" data-en="Operate">Operar</p>
+                        <p data-en="Supervision dashboard. It imports reports from the phone system and generates Excel files without libraries.">Panel de supervisión. Importa los reportes de la central telefónica y genera Excel sin librerías.</p>
+                        <p class="modulo-links">
+                            <a href="https://matias209.github.io/orbitcx-mission-control/" target="_blank" rel="noopener noreferrer" data-en="View demo">Ver demo</a>
+                            <a href="https://github.com/matias209/orbitcx-mission-control" target="_blank" rel="noopener noreferrer" data-en="View code">Ver código</a>
+                        </p>
+                    </div>
+                </li>
+
+                <li class="modulo modulo-constellation" id="constellation">
+                    <span class="modulo-planeta" aria-hidden="true"></span>
+                    <div>
+                        <h3>Constellation</h3>
+                        <p class="modulo-fase" data-en="Improve">Mejorar</p>
+                        <p data-en="Agent scoring system to evaluate service quality and see where to reinforce.">Sistema de puntaje de agentes para evaluar la atención y ver dónde conviene reforzar.</p>
+                        <p class="modulo-links">
+                            <a href="https://matias209.github.io/orbitcx-constellation/" target="_blank" rel="noopener noreferrer" data-en="View demo">Ver demo</a>
+                            <a href="https://github.com/matias209/orbitcx-constellation" target="_blank" rel="noopener noreferrer" data-en="View code">Ver código</a>
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+
+            <p class="nota" data-en="OrbitCX is based on real tools I built, adapted to a fictional company (Big Tower) with sample data. It is built with JavaScript, HTML and CSS, without frameworks, and published on GitHub Pages.">
+                OrbitCX está basado en herramientas reales que construí, adaptadas a una empresa ficticia
+                (Big Tower) con datos de ejemplo. Está hecho en JavaScript, HTML y CSS, sin frameworks,
+                y publicado en GitHub Pages.
             </p>
 
-
-            <div class="project-grid" id="project-grid">
-
-                <!--
-
-                    Los proyectos serán cargados mediante JavaScript.
-
-                    Estructura prevista:
-
-                    Performance Dashboard
-                    Sistema de Evaluación
-                    Python Automation
-
-                    Cada proyecto podrá enlazar posteriormente a:
-
-                    - GitHub repository
-                    - README
-                    - Capturas
-                    - Video/demo
-                    - Documentación
-
-                -->
-
-            </div>
-
-        </section>
-
-
-        <!-- AZURE LAB -->
-
-        <section class="section container" id="azure-lab">
-
-            <div class="section-heading">
-
-                <p class="section-number">04</p>
-
-                <h2>Azure Lab</h2>
-
-            </div>
-
-
-            <p class="section-intro">
-                Hands-on laboratories focused on Microsoft Azure,
-                infrastructure, identity, networking, storage and automation.
+            <p>
+                <a class="enlace-destacado" href="https://matias209.github.io/orbitcx-ui/" target="_blank" rel="noopener noreferrer" data-en="See the shared design system">
+                    Ver el sistema de diseño compartido
+                </a>
             </p>
 
-
-            <div class="lab-grid" id="lab-grid">
-
-                <!-- JavaScript cargará los laboratorios -->
-
+            <div class="tambien">
+                <h3 data-en="I also built">También construí</h3>
+                <h4>AI-LAB_DET</h4>
+                <p data-en="Python tool to automate reconnaissance and analysis tasks for authorized web security testing, organized in modules (reconnaissance, vulnerability scanning and active testing) with authorization controls on the targets.">
+                    Herramienta en Python para automatizar tareas de reconocimiento y análisis de seguridad
+                    web autorizado, organizada en módulos (reconocimiento, escaneo de vulnerabilidades y
+                    pruebas activas) con controles de autorización sobre los objetivos.
+                </p>
             </div>
-
         </section>
 
+        <!-- BITÁCORA DE VUELO -->
+        <section class="seccion contenedor" id="bitacora">
+            <h2 data-en="Flight log">Bitácora de vuelo</h2>
+            <p class="bloque-texto" data-en="This is my learning log: I record here what I study and practice. I keep learning all the time, and this is how I keep it visible.">
+                Es mi bitácora de aprendizaje: acá voy registrando lo que estudio y practico.
+                Sigo aprendiendo todo el tiempo, y esta es la forma de dejarlo a la vista.
+            </p>
+            <p>
+                <a class="enlace-destacado" href="https://matias209.github.io/-bitacora-de-aprendizaje/" target="_blank" rel="noopener noreferrer" data-en="Open the log">
+                    Abrir la bitácora
+                </a>
+            </p>
+        </section>
 
-        <!-- CERTIFICACIONES -->
-
-    <section class="section container" id="certificaciones">
-
-    <div class="section-heading">
-
-        <p class="section-number">05</p>
-
-        <h2>Certificaciones</h2>
-
-    </div>
-
-
-    <div class="certification-card">
-
-        <h3>
-            Microsoft Certified: Azure Administrator Associate
-        </h3>
-
-        <p>
-            AZ-104
-        </p>
-
-        <span>
-            En preparación
-        </span>
-
-    </div>
-
-
-    <div class="certification-card">
-
-        <h3>
-            Zendesk Admin Expert
-        </h3>
-
-        <p>
-            Zendesk
-        </p>
-
-    </div>
-
-
-    <div class="certification-card">
-
-        <h3>
-            RPA & Automation
-        </h3>
-
-        <p>
-            Automation Anywhere · Power Automate
-        </p>
-
-    </div>
-
-</section>
-
-
+        <!-- OTROS PROYECTOS (la sección de Certificaciones se suma más adelante) -->
+        <section class="seccion contenedor" id="otros-proyectos">
+            <h2 data-en="Other projects">Otros proyectos</h2>
+            <p class="bloque-texto" data-en="Coming soon.">Próximamente.</p>
+        </section>
 
         <!-- CONTACTO -->
+        <section class="seccion contenedor" id="contacto">
+            <h2 data-en="Contact">Contacto</h2>
+            <p class="bloque-texto" data-en="Montevideo, Uruguay. Available for remote work.">Montevideo, Uruguay. Disponible para trabajo remoto.</p>
 
-        <section class="section container" id="contacto">
-
-            <div class="section-heading">
-
-                <p class="section-number">06</p>
-
-                <h2>Contacto</h2>
-
-            </div>
-
-
-            <div class="contact-content">
-
-                <p>
-                    Abierto a oportunidades en IT Operations,
-                    Project Management, Technical Support,
-                    Functional Analysis, Automation, CRM
-                    y Cloud Operations.
-                </p>
-
-
-                <a href="mailto:matias.11396@outlook.com">
-                    matias.11396@outlook.com
-                </a>
-                <a 
-                    href="https://wa.me/59899099674" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                >
-                    WhatsApp: +598 99 099 674 (Solo msj)
-                </a>
-
-            </div>
-
+            <ul class="contacto">
+                <li><a href="mailto:mat.sam.diaz@gmail.com">mat.sam.diaz@gmail.com</a></li>
+                <li><a href="tel:+59896007510">+598 96 007 510</a></li>
+                <li>
+                    <a href="https://www.linkedin.com/in/matias-d%C3%ADaz-s%C3%A1nchez-684413106/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </li>
+                <li>
+                    <a href="https://github.com/matias209" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </li>
+            </ul>
         </section>
 
     </main>
 
-
-    <!-- FOOTER -->
-
-    <footer class="site-footer">
-
-        <div class="container">
-
-            <p>
-                © <span id="current-year"></span>
-                Matías Díaz · Montevideo, Uruguay
-            </p>
-
+    <footer class="pie">
+        <div class="contenedor">
+            <p>Matías Samuel Díaz · Montevideo, Uruguay</p>
         </div>
-
     </footer>
 
-
     <script src="js/script.js"></script>
-
 </body>
 
 </html>
