@@ -587,6 +587,28 @@ img {
     color: var(--texto-suave);
 }
 
+/* ---------- Otros proyectos ---------- */
+.proyecto-otro {
+    max-width: 66ch;
+    padding-left: 20px;
+    border-left: 3px solid var(--linea);
+}
+
+.proyecto-otro h3 {
+    margin-bottom: 4px;
+    font-size: 1.25rem;
+}
+
+.proyecto-otro .proyecto-sub {
+    margin-bottom: 16px;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.proyecto-otro p {
+    margin-bottom: 16px;
+}
+
 /* ---------- Certificaciones y contacto ---------- */
 .lista-simple {
     margin: 0 0 32px;
